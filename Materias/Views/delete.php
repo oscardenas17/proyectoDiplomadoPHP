@@ -8,14 +8,14 @@
 </head>
 <body>  
 
-<h1>Eliminar Docente</h1>
+<h1>Eliminar Materia</h1>
 <form method="POST"  action="../Controllers/delete.php">
 
     <input type="hidden" name="Id" value="">
 
-    <p>¿deseas eliminar este Docente?</p>
+    <p>¿deseas eliminar este Materia?</p>
 
-    <input type="submit" value="Eliminar Docente">
+    <input type="submit" value="Eliminar Materia">
 </form>
     
 </body>

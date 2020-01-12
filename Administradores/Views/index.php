@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Docentes - Sistema de notas</title>
+    <title>Administrador - Sistema de notas</title>
 </head>
 <body>
 
-    <h1>Docentes</h1>
-    <a href="add.php" target="_blank">Registrar Docente</a> <br><br>
+    <h1>Administrador</h1>
+    <a href="add.php" target="_blank">Registrar Administrador</a> <br><br>
 
     <table border="1"> 
         <tr>

@@ -10,7 +10,7 @@
 
 
     <h1>Inicio de Sesión</h1>    
-    <form method="POST" action="Usuarios/Controller/login.php">
+    <form method="POST" action="Usuarios/Controllers/login.php">
 
         <label for="Usuario">Usuario: </label>  <br> 
         <input type="text" name="Usuario" required="" autocomplete="off" placeholder="Ingresa tu usuario"> <br>
