@@ -11,13 +11,13 @@ class Usuarios extends Conexion{
 
     public function login($Usuario, $Password){
         
-        $statement = $this->conect->prepare("SELECT * FROM usuarios WHERE USUARIO = :Usuario AND PASSWORD = :password" );
-        $statement->bindParam('Usuario:', $Usuario);
-        $statement->bindParam('Password:', $Password);
+        $statement = $this->conect->prepare("SELECT * FROM usuarios WHERE USUARIO = :Usuario AND PASSWORD = :Password ");
+        $statement->bindParam(':Usuario', $Usuario);
+        $statement->bindParam(':Password', $Password);
         $statement->execute();
 
         if($statement->rowCount()== 1){
-            $result = $statement->fecth();
+            $result = $statement->fetch();
             $_SESSION['NOMBRE']= $result['NOMBRE'] . " " . $result['APELLIDO'];
             $_SESSION['ID']= $result['ID_USUARIO'];
             $_SESSION['PERFIL']= $result['PERFIL'];
