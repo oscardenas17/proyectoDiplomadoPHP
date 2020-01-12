@@ -8,7 +8,7 @@ class Administradores extends Conexion{
     }
 
     public function add($Nombre, $Apellido, $Usuario, $Password){
-        $statement = $this ->conect->prepare("INSERT INTO usuarios (NOMBRE, APELLIDO, USUARIO, PASSWORD, PERFIL, ESTADO) VALUES (:Nombre, :Apellido, :Usuario, :Password, 'Administrador', 'Activo')");
+        $statement = $this ->conect->prepare("INSERT INTO usuarios (NOMBRE, APELLIDO, USUARIO, PASSWORD, PERFIL, ESTADO) VALUE (:Nombre, :Apellido, :Usuario, :Password, 'Administrador', 'Activo')");
         $statement->bindParam(':Nombre', $Nombre);
         $statement->bindParam(':Apellido', $Apellido);
         $statement->bindParam(':Usuario', $Usuario);
@@ -76,8 +76,7 @@ class Administradores extends Conexion{
         }else{
             header ('Location: ../Views/delete.php');
         }
-
-        
+  
     }
 
 }
