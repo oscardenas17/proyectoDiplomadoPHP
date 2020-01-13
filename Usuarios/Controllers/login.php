@@ -7,7 +7,12 @@
         $Password = $_POST['Contrasena'];
 
         $objUsuarios = new Usuarios();
-        $objUsuarios->login($Usuario, $Password);
+
+        if($objUsuarios->login($Usuario, $Password)){
+            header('Location: ../../Estudiantes/Views/index.php');
+        }else{
+            header('Location: ../../index.php');
+        }
 
     }else{
         header('Location: ../../index.php');
