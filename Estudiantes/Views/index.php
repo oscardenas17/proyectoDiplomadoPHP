@@ -1,3 +1,16 @@
+<?php
+
+require_once('../../Usuarios/Models/Usuarios.php');
+require_once('../../Estudiantes/Models/Estudiantes.php');
+
+$objUsuarios = new Usuarios();
+$objUsuarios -> validateSession();
+
+$objEstudiantes = new Estudiantes();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,44 +18,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sistema de notas</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-        
-    <h1>Estudiantes</h1>
 
-    <a href="add.php" target="_blank">Registrar Estudiante</a><br><br>
 
-    <table border="1">
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Documento</th>
-            <th>Correo</th>
-            <th>Materia</th>
-            <th>Docente</th>
-            <th>Promedio</th>
-            <th>Fecha de registro</th>
-            <th>Acciones</th>
-        </tr>
+    <div class="container">
+        <h1 class="text-center">Estudiantes</h1>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <a href="edit.php" target="_blank">Editar</a>
-                <a href="delete.php" target="_blank">Eliminar</a>
-            </td>
-        </tr>
+        <button type="button" class="btn btn-success mb-5 mt-5">
+            <a href="add.php" target="_blank" class="text-decoration-none font-weight-bold text-dark">Registrar Estudiante</a>
+        </button>
 
-    </table>
+        <div class="table-responsive table-responsive-sm">
+            <table class="table table-striped table-bordered table-hover ">
+            <caption>List of Students</caption>
+                <thead class="thead-dark">
+                    <tr>
+                        <th >Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Documento</th>
+                        <th>Correo</th>
+                        <th>Materia</th>
+                        <th>Docente</th>
+                        <th>Promedio</th>
+                        <th>Fecha de registro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
 
+
+            <?php
+                $estudiantes = $objEstudiantes->get();
+                if($estudiantes != null){
+                    foreach($estudiantes as $estudiante){
+
+            ?>
+                <tr class="text-center">
+                    <td><?php echo $estudiante['id_estudiante']?></td>
+                    <td><?php echo $estudiante['nombre']?></td>
+                    <td><?php echo $estudiante['apellido']?></td>
+                    <td><?php echo $estudiante['documento']?></td>
+                    <td><?php echo $estudiante['correo']?></td>
+                    <td><?php echo $estudiante['materia']?></td>
+                    <td><?php echo $estudiante['docente']?></td>
+                    <td><?php echo $estudiante['promedio']?></td>
+                    <td><?php echo $estudiante['fecha_registro']?></td>
+                    <td>
+                        <a href="edit.php" target="_blank">Editar</a>
+                        <a href="delete.php" target="_blank">Eliminar</a>
+                    </td>
+                </tr>
+
+            <?php
+                    }
+                }
+            ?>
+
+            </table>
+
+            </div>
+     </div>  
 </body>
 </html>

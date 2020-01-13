@@ -4,7 +4,7 @@ require_once('../../Conexion.php');
 class Estudiantes extends Conexion{
 
     public function __construct(){
-        $this->db = parent::__construct();
+        $this->conect = parent::__construct();
     }
 
     public function add($Nombre, $Apellido, $Documento, $Correo, $Materia, $Docente, $Promedio, $Fecha){
@@ -64,8 +64,7 @@ class Estudiantes extends Conexion{
     }
 
 
-
-    public function get (){
+    public function get(){
         $rows = null;
         $statement = $this->conect->prepare("SELECT * FROM estudiantes");
 
