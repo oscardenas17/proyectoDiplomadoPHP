@@ -67,9 +67,11 @@ $objEstudiantes = new Estudiantes();
                     <td><?php echo $estudiante['docente']?></td>
                     <td><?php echo $estudiante['promedio']?></td>
                     <td><?php echo $estudiante['fecha_registro']?></td>
+
                     <td>
-                        <a href="edit.php" target="_blank">Editar</a>
-                        <a href="delete.php" target="_blank">Eliminar</a>
+                        <a href="edit.php?Id=<?php echo $estudiante['id_estudiante']?>" target="_blank">Editar</a>
+
+                        <a href="delete.php?Id=<?php echo $estudiante['id_estudiante']?>" target="_blank">Eliminar</a>
                     </td>
                 </tr>
 
