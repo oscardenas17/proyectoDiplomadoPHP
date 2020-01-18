@@ -11,7 +11,7 @@
 <body>
 
 
-<div class= "container mx-auto"  style="width: 500px;">
+<div class= "container mx-auto"  style="width: 100px;">
     <h1 class="mx-auto mt-5 text-center">Inicio de Sesión</h1>   
 
         <form method="POST" action="Usuarios/Controllers/login.php">

@@ -17,9 +17,8 @@ class Estudiantes extends Conexion{
         $statement->bindParam(':Materia', $Materia);
         $statement->bindParam(':Docente', $Docente);
         $statement->bindParam(':Promedio', $Promedio);
-        $statement->bindParam(':Fecha;', $Fecha);
-        
-        
+        $statement->bindParam(':Fecha', $Fecha);
+                
         if($statement->execute()){
             header ('Location: ../Views/index.php');
         }else{

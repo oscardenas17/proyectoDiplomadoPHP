@@ -5,7 +5,7 @@ require_once('../../Conexion.php');
 class Docentes extends Conexion{
 
     public function __construct(){
-        $this->db = parent::__construct();
+        $this->conect = parent::__construct();
     }
 
     public function add($Nombre, $Apellido, $Usuario, $Password){
