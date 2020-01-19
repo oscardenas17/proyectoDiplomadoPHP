@@ -38,7 +38,7 @@ class Estudiantes extends Conexion{
         $statement->bindParam(':Materia', $Materia);
         $statement->bindParam(':Docente', $Docente);
         $statement->bindParam(':Promedio', $Promedio);
-        $statement->bindParam(':Fecha;', $Fecha);
+        $statement->bindParam(':Fecha', $Fecha);
         
         if($statement->execute()){
             header ('Location: ../Views/index.php');
@@ -77,9 +77,9 @@ class Estudiantes extends Conexion{
 
     public function getById($Id){
         $rows = null;
-        $statement = $this->conect->prepare("SELECT ID_ESTUDIOANTE, NOMBRE, APELLIDO, DOCUMENTO, CORREO, MATERIA DOCENTE, PROMEDIO, FECHA_REGISTRO FROM estudiantes WHERE  ID_ESTUDIANTE =:Id ");
+        $statement = $this->conect->prepare("SELECT ID_ESTUDIANTE, NOMBRE, APELLIDO, DOCUMENTO, CORREO, MATERIA, DOCENTE, PROMEDIO, FECHA_REGISTRO FROM estudiantes WHERE  ID_ESTUDIANTE =:Id ");
 
-        $statement->binParam(':Id',$Id);
+        $statement->bindParam(':Id',$Id);
 
         $statement->execute();
         while($result = $statement->fetch()){
