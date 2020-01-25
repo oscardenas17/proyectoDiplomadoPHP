@@ -1,3 +1,14 @@
+<?php
+require_once('../../Usuarios/Models/Usuarios.php');
+require_once('../Models/Materias.php');
+
+$modeloUsuarios = new Usuarios();
+$modeloUsuarios ->validateSession();
+
+$modeloMaterias = new Materias();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +30,26 @@
             <th>Acciones</th>
         </tr>
 
+
+        <?php
+            $materias = $modeloMaterias->get();
+            if($materias != null){
+                foreach($materias as $materia){
+            
+        ?>
         <tr>
-            <ht></ht>
-            <ht></ht>
-            <ht>
-                <a href="edit.php" target="_blank">Editar</a>
-                <a href="delete.php" target="_blank">Eliminar</a>
-            </ht>
+            <td><?php echo $materia['ID_MATERIA']?></td>
+            <td><?php echo $materia['MATERIA']?></td>
+            <td>
+                <a href="edit.php?Id=<?php echo $materia['ID_MATERIA']?>" target="_blank">Editar</a>
+                <a href="delete.php?Id=<?php echo $materia['ID_MATERIA']?>" target="_blank">Eliminar</a>
+            </td>
         </tr>
+    <?php
+                }
+            }
+    ?>
+
 
     </table>
 
