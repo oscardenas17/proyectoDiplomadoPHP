@@ -62,7 +62,7 @@ class Materias extends Conexion{
     }
 
     public function delete($Id){
-        $statement = $this->conect->prepare("DELETE FROM materias SET WHERE ID_MATERIA = :Id");
+        $statement = $this->conect->prepare("DELETE FROM materias  WHERE ID_MATERIA = :Id");
 
         $statement ->bindParam(':Id', $Id);
        
