@@ -35,7 +35,7 @@ class Materias extends Conexion{
 
     public function getById($Id){
         $rows=null;
-        $statement = $this->conect->prepare("SELECT * FROM materias WHRERE ID_MATERIA = :$Id");
+        $statement = $this->conect->prepare("SELECT * FROM materias WHERE ID_MATERIA = :Id");
 
         $statement ->bindParam(':Id', $Id);
         $statement->execute();
@@ -44,10 +44,6 @@ class Materias extends Conexion{
             $rows[] = $result;
         }
         return $rows;
-
-
-
-
 
     }
 

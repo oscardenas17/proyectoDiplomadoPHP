@@ -1,8 +1,11 @@
 <?php
 require_once('../../Usuarios/Models/Usuarios.php');
+require_once('../Models/Materias.php');
 
 $modeloUsuarios = new Usuarios();
 $modeloUsuarios ->validateSession();
+
+
 
 ?>
 
@@ -19,10 +22,16 @@ $modeloUsuarios ->validateSession();
 
     <h1>Registrar materia</h1>
     <form method="POST" action="../Controllers/add.php">
-        <label for="Nombre"> Nombre materia: </label>
-        <input type="text" name="Nombre" required autocomplete="off" placeholder="Nombre materia"> <br><br>
+    <input type="hidden" name="Id" value="<?php echo $Id ?>">
+
+   
+        <label for="Nombre">Nombre Materia: </label>
+        <input type="text" name="Nombre" required autocomplete="off" placeholder="Nombre materia" > <br><br>
+      
+        
         <input type="submit" value="Registrar Materia">
     </form>
+
     
 </body>
 </html>
