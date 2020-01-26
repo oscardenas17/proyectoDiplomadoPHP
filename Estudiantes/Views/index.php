@@ -46,6 +46,7 @@ $objEstudiantes = new Estudiantes();
   <?php      
 }
 ?>
+<h3><?php echo $objUsuarios-> getNombre();?></h3>
 
 
     <div class="container">
