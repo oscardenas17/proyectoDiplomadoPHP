@@ -1,3 +1,16 @@
+
+<?php
+    require_once('../../Usuarios/Models/Usuarios.php');
+    require_once('../Models/Administradores.php');
+
+    $modeloUsuarios = new Usuarios();
+    $modeloAdministradores = new Administradores();
+    
+    $modeloUsuarios ->validateSession();
+    $Id = $_GET['Id'];
+    $administrador = $modeloAdministradores->getById($Id);
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,33 +22,40 @@
 <body>
 
     <h1>Editar administrador</h1>
-    <form method="POST" action="../Controllers/edit.php"></form>
+    <form method="POST" action="../Controllers/edit.php">
 
-    <input type="hidden" name="Id" value="">
+    <?php
+        if($administrador != null){
+            foreach($administrador as $info){        
+    ?>
+
+    <input type="hidden" name="Id" value="<?php echo $Id;?>">
     
     <label for="Nombre">Nombre: </label><br>
-    <input type="text" name="Nombre" required autocomplete="off" placeholder="Nombre"><br><br>
+    <input type="text" name="Nombre" required autocomplete="off" placeholder="Nombre" value="<?php echo $info['NOMBRE']; ?>"><br><br>
 
     <label for="Apellido">Apellido: </label><br>
-    <input type="text" name="Apellido" required autocomplete="off" placeholder="Apellido"><br><br>
+    <input type="text" name="Apellido" required autocomplete="off" placeholder="Apellido" value="<?php echo $info['APELLIDO']; ?>"><br><br>
 
     <label for="Usuario">Usuario: </label><br>
-    <input type="text" name="Usuario" required autocomplete="off" placeholder="Usuario"><br><br>
+    <input type="text" name="Usuario" required autocomplete="off" placeholder="Usuario" value="<?php echo $info['USUARIO']; ?>"><br><br>
 
     <label for="Password">Password: </label><br>
-    <input type="password" name="Password" required autocomplete="off" placeholder="Password"><br><br>
+    <input type="password" name="Password" required autocomplete="off" placeholder="Password" value="<?php echo $info['PASSWORD']; ?>"><br><br>
 
     <label for="Estado">Estado: </label><br>
     <select name="Estado"  required >
-        <option value="" disabled>Seleccion</option>
+        <option value="<?php echo $info['ESTADO'] ?>" ><?php $info['ESTADO'] ?></option>
         <option value="Activo">Activo</option>
         <option value="Inactivo">Inactivo</option>
     </select><br><br>
 
-
+    <?php  
+         }
+        }
+        ?>
     <input type="submit" value="EditarAdministrador"> 
-
-
+</form>
 
 
 </body>

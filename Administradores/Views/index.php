@@ -6,6 +6,7 @@
     $modeloAdministradores = new Administradores();
     
     $modeloUsuarios ->validateSession();
+    
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +58,8 @@
             <td><?php echo  $admin['PERFIL'] ?></td>
             <td><?php echo  $admin['ESTADO'] ?></td>
             <td>
-                <a href="edit.php?Id=<?php echo $admins['id_usuario']?>" target="_Blank">Editar</a>
-                 <a href="delete.php?Id=<?php echo $admins['id_usuario']?>" target="_blank">Eliminar</a>   
+                <a href="edit.php?Id=<?php echo $admin['ID_USUARIO']?>" target="_Blank">Editar</a>
+                 <a href="delete.php?Id=<?php echo $admin['ID_USUARIO']?>" target="_blank">Eliminar</a>   
             </td>
         </tr>
 
