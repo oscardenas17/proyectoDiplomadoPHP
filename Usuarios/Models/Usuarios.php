@@ -61,6 +61,15 @@ class Usuarios extends Conexion{
     }
 
 
+    public function salir(){
+        $_SESSION['ID']= null;
+        $_SESSION['NOMBRE']= null;
+        $_SESSION['PERFIL']= null;
+        session_destroy();
+        header ('Location: ../../index.php');
+    }
+
+
 }
 
 ?>

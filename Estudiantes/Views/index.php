@@ -41,7 +41,7 @@ $objEstudiantes = new Estudiantes();
     <a href="../../Docentes/Views/index.php">DOCENTES</a>
     <a href="../../Materias/views/index.php">MATERIAS</a>
     <a href="#">Estudiantes</a>
-    <a href="">Salir</a>
+    <a href="../../Usuarios/Controllers/salir.php">Salir</a>
     </h1>
   <?php      
 }
