@@ -4,7 +4,7 @@ require_once('../../Conexion.php');
 class Administradores extends Conexion{
 
     public function __construct(){
-        $this->db = parent::__construct();
+        $this->conect = parent::__construct();
     }
 
     public function add($Nombre, $Apellido, $Usuario, $Password){
@@ -22,9 +22,9 @@ class Administradores extends Conexion{
         
     }
 
-    public function get (){
+    public function get(){
         $rows = null;
-        $statement = $this->conect->prepare("SELECT * FROM usuarios WHERE PERFIL = 'Administrador' ");
+        $statement = $this->conect->prepare("SELECT * FROM usuarios WHERE PERFIL= 'Administrador' ");
 
         $statement->execute();
         while($result = $statement->fetch()){
