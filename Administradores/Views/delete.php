@@ -1,3 +1,16 @@
+
+<?php
+    require_once('../../Usuarios/Models/Usuarios.php');
+   
+    $modeloUsuarios = new Usuarios();
+ 
+    $modeloUsuarios ->validateSession();
+    $Id = $_GET['Id'];
+  
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +24,7 @@
 <h1>Eliminar Administrador</h1>
 <form method="POST"  action="../Controllers/delete.php">
 
-    <input type="hidden" name="Id" value="">
+    <input type="hidden" name="Id" value="<?php echo $Id;?>">
 
     <p>¿deseas eliminar este administrador?</p>
 
