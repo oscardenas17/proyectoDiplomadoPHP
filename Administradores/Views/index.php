@@ -5,7 +5,7 @@
     $modeloUsuarios = new Usuarios();
     $modeloAdministradores = new Administradores();
     
-    $modeloUsuarios ->validateSession();
+    $modeloUsuarios ->validateSessionAdministrador();
     
 ?>
 

@@ -3,7 +3,7 @@ require_once('../../Usuarios/Models/Usuarios.php');
 require_once('../Models/Materias.php');
 
 $modeloUsuarios = new Usuarios();
-$modeloUsuarios ->validateSession();
+$modeloUsuarios ->validateSessionAdministrador();
 
 $modeloMaterias = new Materias();
 ?>
