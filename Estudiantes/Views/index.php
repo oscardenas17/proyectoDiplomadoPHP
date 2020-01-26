@@ -24,6 +24,29 @@ $objEstudiantes = new Estudiantes();
 </head>
 <body>
 
+<?php
+    if($objUsuarios->getPerfil()=='Docente'){
+?>
+    <h1>
+        <a href="#">Estudiantes</a>
+        <a href="">Salir</a>
+    </h1>
+
+<?php
+}else{
+?>
+
+    <h1>
+    <a href="../../Administradores/Views/index.php">ADMINISTRADORES</a>
+    <a href="../../Docentes/Views/index.php">DOCENTES</a>
+    <a href="../../Materias/views/index.php">MATERIAS</a>
+    <a href="#">Estudiantes</a>
+    <a href="">Salir</a>
+    </h1>
+  <?php      
+}
+?>
+
 
     <div class="container">
         <h1 class="text-center">Estudiantes</h1>
