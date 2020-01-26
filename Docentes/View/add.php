@@ -9,7 +9,7 @@
 <body>
 
     <h1>Registrar docente</h1>
-    <form method="POST" action="../Controllers/add.php"></form>
+    <form method="POST" action="../Controllers/add.php">
     
     <label for="Nombre">Nombre: </label><br>
     <input type="text" name="Nombre" required autocomplete="off" placeholder="Nombre"><br><br>
@@ -23,8 +23,10 @@
     <label for="Password">Password: </label><br>
     <input type="password" name="Password" required autocomplete="off" placeholder="Password"><br><br>
 
-    <input type="submit" value="Registar Docente"> 
+  
 
+    <input type="submit" value="Registar Docente"> 
+    </form>
 
 
 
